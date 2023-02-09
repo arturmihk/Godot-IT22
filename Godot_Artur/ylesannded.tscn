@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ylesanne2.gd" type="Script" id=1]
 [ext_resource path="res://ylesanne1.gd" type="Script" id=2]
@@ -6,9 +6,125 @@
 [ext_resource path="res://Ylesanne4.1.gd" type="Script" id=4]
 [ext_resource path="res://Ylesanne4.2.gd" type="Script" id=5]
 [ext_resource path="res://Ylesanne5.gd" type="Script" id=6]
+[ext_resource path="res://bg2.webp" type="Texture" id=7]
+[ext_resource path="res://Ylesanne6.gd" type="Script" id=8]
+[ext_resource path="res://VT323-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Ylesanne8.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 75
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 60
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 9 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 2 )
+
+[node name="Node7" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="kivi" type="Button" parent="Node7"]
+margin_left = 97.0
+margin_top = 73.0
+margin_right = 132.0
+margin_bottom = 93.0
+text = "Kivi"
+
+[node name="paber" type="Button" parent="Node7"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="kaaird" type="Button" parent="Node7"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="restart" type="Button" parent="Node7"]
+anchor_right = 0.202
+anchor_bottom = 0.243
+margin_left = 72.0
+margin_top = 136.0
+margin_right = -122.848
+margin_bottom = 10.2
+
+[node name="Node6" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="Taustapilt" type="TextureRect" parent="Node6"]
+visible = false
+anchor_left = 0.046
+anchor_top = 0.821
+anchor_right = 0.246
+anchor_bottom = 0.937
+margin_left = -47.104
+margin_top = -492.6
+margin_right = -211.904
+margin_bottom = -522.2
+texture = ExtResource( 7 )
+
+[node name="Elud" type="RichTextLabel" parent="Node6/Taustapilt"]
+margin_left = 770.0
+margin_top = 447.0
+margin_right = 938.0
+margin_bottom = 487.0
+rect_pivot_offset = Vector2( 144, 19 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+fit_content_height = true
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+
+[node name="GameOver" type="RichTextLabel" parent="Node6/Taustapilt"]
+margin_left = 171.0
+margin_top = 45.0
+margin_right = 584.0
+margin_bottom = 167.0
+custom_fonts/normal_font = SubResource( 2 )
+
+[node name="Ammo" type="RichTextLabel" parent="Node6/Taustapilt"]
+modulate = Color( 0.290196, 1, 0, 1 )
+use_parent_material = true
+anchor_right = 0.02
+anchor_bottom = 0.033
+margin_left = 20.0
+margin_top = 459.0
+margin_right = 237.52
+margin_bottom = 551.2
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="PiuPiu" type="RichTextLabel" parent="Node6/Taustapilt"]
+margin_left = 45.0
+margin_top = 47.0
+margin_right = 206.0
+margin_bottom = 134.0
+custom_fonts/normal_font = SubResource( 4 )
+scroll_active = false
+
+[node name="Score" type="RichTextLabel" parent="Node6/Taustapilt"]
+anchor_right = 0.039
+anchor_bottom = 0.067
+margin_left = 838.0
+margin_top = 5.0
+margin_right = 975.064
+margin_bottom = 31.8
+custom_fonts/normal_font = SubResource( 5 )
 
 [node name="Node5" type="Node" parent="."]
 script = ExtResource( 6 )
