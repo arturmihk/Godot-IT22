@@ -17,10 +17,10 @@ func _process(delta):
 	$elud.text = "Elud: "+str(e)
 	var kor = get_node ("player")
 	$game_over.visible = false
-	#if kor.position.y > 400:
-	#	kor.position.y = 0
-		#kor.position.x = 0
-		#e -= 1
-		#if e < 1:
-		#	$game_over.visible = true
-		#	get_tree().paused = true
+	if kor.position.y > 800:
+		kor.position.y = 0
+		kor.position.x = 0
+		e -= 1
+		if e < 1:
+			$game_over.visible = true
+			get_tree().paused = true
