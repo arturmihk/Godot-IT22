@@ -2,6 +2,7 @@ extends KinematicBody2D
  
 #seaded
 const SPEED = 200
+const SPEED2 = 150
 const ACCEL = 50
 const UP = Vector2(0,-1)
 
@@ -14,7 +15,35 @@ func _physics_process(_delta):
  
 #funktsioonid
 func run():
- if Input.is_action_pressed("ui_right"):
+ if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left"):
+	 motion.y += ACCEL
+	 motion.y = min(SPEED2, motion.y)
+	 motion.x -= ACCEL
+	 motion.x = max(-SPEED2, motion.x)
+	 $AnimatedSprite.flip_h = false
+	 $AnimatedSprite.play("left")
+ elif Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_right"):
+	 motion.y += ACCEL
+	 motion.y = min(SPEED2, motion.y)
+	 motion.x += ACCEL
+	 motion.x = min(SPEED2, motion.x)
+	 $AnimatedSprite.flip_h = false
+	 $AnimatedSprite.play("right")
+ elif Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_left"):
+	 motion.y -= ACCEL
+	 motion.y = max(-SPEED2, motion.y)
+	 motion.x -= ACCEL
+	 motion.x = max(-SPEED2, motion.x)
+	 $AnimatedSprite.flip_h = false
+	 $AnimatedSprite.play("left")
+ elif Input.is_action_pressed("ui_up") and Input.is_action_pressed("ui_right"):
+	 motion.y -= ACCEL
+	 motion.y = max(-SPEED2, motion.y)
+	 motion.x += ACCEL
+	 motion.x = min(SPEED2, motion.x)
+	 $AnimatedSprite.flip_h = false
+	 $AnimatedSprite.play("right")
+ elif Input.is_action_pressed("ui_right"):
 	 motion.y = lerp(motion.y, 0, 0.2)
 	 motion.x += ACCEL
 	 motion.x = min(SPEED, motion.x)
