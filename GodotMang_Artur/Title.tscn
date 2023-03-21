@@ -41,7 +41,7 @@ margin_right = 824.0
 margin_bottom = 100.0
 custom_colors/font_color = Color( 0.572549, 0.65098, 1, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Escape Mario "
+text = "Kill Dario"
 align = 1
 
 [node name="newGame" type="Button" parent="MarginContainer/VBoxContainer"]
