@@ -6,15 +6,20 @@ const SPEED2 = 150
 const ACCEL = 50
 const UP = Vector2(0,-1)
 
- 
+
 var motion = Vector2()
- 
+export (PackedScene) var Bullet
+
 func _physics_process(_delta):
  run()
  motion = move_and_slide(motion, UP)
  
 #funktsioonid
 func run():
+	
+ if Input.is_action_pressed("Shoot"):
+	 shoot()
+ 
  if Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_left"):
 	 motion.y += ACCEL
 	 motion.y = min(SPEED2, motion.y)
@@ -71,3 +76,7 @@ func run():
 	 motion.x = lerp(motion.x, 0, 0.2)
 	 motion.y = lerp(motion.y, 0, 0.2)
 	 $AnimatedSprite.play("idle")
+func shoot():
+	var b = Bullet.instance()
+	add_child(b)
+	b.transform = $Muzzle.transform
