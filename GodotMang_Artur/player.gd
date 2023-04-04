@@ -7,6 +7,8 @@ const ACCEL = 50
 const UP = Vector2(0,-1)
 const bulletpath = preload("res://Bullet.tscn")
 
+
+
 var motion = Vector2()
 var bullet_speed = 700
 
