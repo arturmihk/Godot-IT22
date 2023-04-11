@@ -388,10 +388,4 @@ position = Vector2( 1, 0 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Snake1" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 450, -240 )
-
-[node name="Snake2" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 386, -317 )
-
-[node name="Snake3" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 276, -341 )
+position = Vector2( 173, -346 )

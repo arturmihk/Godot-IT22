@@ -8,7 +8,7 @@ const UP = Vector2(0,-1)
 const bulletpath = preload("res://Bullet.tscn")
 
 
-
+var hp = 1
 var motion = Vector2()
 var bullet_speed = 700
 
@@ -90,12 +90,6 @@ func run():
 		shoot()
 		
 	$Node2D.look_at(get_global_mouse_position())
-
-
-func _on_Bullet_body_entered(body):
-	if body is TileMap:
-		queue_free()
-
 
 func shoot():
 	var bullet = bulletpath.instance()

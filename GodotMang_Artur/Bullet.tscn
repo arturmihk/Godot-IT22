@@ -21,8 +21,8 @@ extents = Vector2( 6.5, 6 )
 
 [node name="Bullet" type="KinematicBody2D"]
 position = Vector2( 674, 463 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 6
+collision_mask = 6
 script = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
